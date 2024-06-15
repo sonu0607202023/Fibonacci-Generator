@@ -1,36 +1,41 @@
-import tkinter as tk
-from tkinter import messagebox
+Fibonacci Series Generator
+This Python application uses Tkinter to create a graphical user interface (GUI) for generating and displaying the Fibonacci series up to a user-specified number of terms.
 
-def generate_fibonacci():
-    try:
-        n = int(entry.get())
-        if n <= 0:
-            raise ValueError("The number must be positive.")
-    except ValueError as e:
-        messagebox.showerror("Invalid input", f"Please enter a valid positive integer.\n\nError: {e}")
-        return
-    
-    fibonacci_series = [0, 1]
-    for i in range(2, n):
-        next_number = fibonacci_series[-1] + fibonacci_series[-2]
-        fibonacci_series.append(next_number)
-    
-    result_label.config(text=f"Fibonacci series up to {n} terms:\n{', '.join(map(str, fibonacci_series))}")
+Features
+Input Field: Enter the number of terms for the Fibonacci series.
+Generate Button: Initiate the computation of the Fibonacci sequence.
+Result Display: Shows the generated Fibonacci series.
+Getting Started
+Prerequisites
+Python 3.x installed on your system.
+Tkinter library, which is usually included with Python installations.
+Installation
+Clone the repository:
 
-#set up the main window
-root = tk.Tk()
-root.title("Fibonacci Series Generator")
+bash
+Copy code
+git clone https://github.com/sonu0607202023/fibonacci-generator.git
+Navigate into the project directory:
 
-#create label, entry, and button widgets
-tk.Label(root, text="Enter the number of terms:").pack(pady=10)
-entry = tk.Entry(root)
-entry.pack(pady=10)
+bash
+Copy code
+cd fibonacci-generator
+Usage
+Run the Python script:
 
-generate_button = tk.Button(root, text="Generate", command=generate_fibonacci)
-generate_button.pack(pady=10)
+bash
+Copy code
+python fibonacci_gui.py
+Enter a positive integer in the input field.
 
-result_label = tk.Label(root, text="")
-result_label.pack(pady=10)
+Click the "Generate" button to see the Fibonacci series displayed.
 
-#start the fibbonaci generator
-root.mainloop()
+Example
+Here's how the application looks when running:
+
+
+Contributing
+Contributions are welcome! Please fork the repository and submit a pull request with your changes.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
